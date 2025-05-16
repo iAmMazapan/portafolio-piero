@@ -1,0 +1,19 @@
+About me
+    quien soy, que hago, basicamente mi trayectoria como estudiante y logros
+    Links de LinkedIn, github, codeforces, codechef
+Projects
+    cosas que hago en mi tiempo libre
+    "todavia no tengo proyectos"
+Competitive Programming
+    Dynamic Programming 
+    Graphs
+    Trees
+    Estructura de datos
+Hobbies
+    Leer
+    Musica
+    Puzzles
+    Guitarra
+Gallery
+    fotos con descripcion cada una, la idea es que sea una cuadricula con fotos y que al 
+    al abrir una se muestre con la descripcion y se pueda pasr de una a otra
