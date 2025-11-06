@@ -131,6 +131,27 @@
     @apply text-orange-400;
   } 
 
+/* ESTILOS PARA LA SECCION DE PROYECTOS*/
+  .featured-project {
+    @apply relative overflow-hidden;
+  }
+  
+  .featured-project::before {
+    content: '';
+    @apply absolute -top-1 -left-1 w-2 h-2 bg-accent-blue rounded-full opacity-0 transition-opacity duration-300;
+  }
+  
+  .featured-project:hover::before {
+    @apply opacity-100;
+  }
+  
+  .tech-tag {
+    @apply px-3 py-1 bg-gradient-to-r from-accent-blue/20 to-accent-purple/20 text-accent-blue text-xs font-semibold rounded-full border border-accent-blue/30 hover:border-accent-blue transition-colors;
+  }
+  
+  .project-link {
+    @apply flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
 }
 
 /* Animaciones */
