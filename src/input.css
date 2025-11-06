@@ -152,6 +152,29 @@
   .project-link {
     @apply flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg;
   }
+
+ /* ESTILOS PARA LA SECCION DE HOBBIES*/ 
+
+  .hobby-card {
+    @apply card text-center transition-all duration-300 hover:scale-105;
+  }
+  .hobby-icon {
+    @apply w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-300;
+  }
+
+/* ESTILOS PARA LA SECCION DE MEMORIAS*/
+
+  .memory-card {
+    @apply bg-dark-card rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-gray-800 hover:border-accent-blue;
+  }
+  
+  .memory-image {
+    @apply relative overflow-hidden;
+  }
+  
+  .memory-overlay {
+    @apply absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+  }
 }
 
 /* Animaciones */
