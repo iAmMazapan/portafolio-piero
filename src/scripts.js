@@ -137,4 +137,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Iniciar el efecto después de un pequeño delay
     setTimeout(typeWriter, 500);
+
+    // ============================================
+    // PESTAÑAS DE CÓDIGO
+    // ============================================
+    const codeTabs = document.querySelectorAll('.code-tab');
+    const codeContents = document.querySelectorAll('.code-content');
+
+    codeTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.getAttribute('data-target');
+            
+            // Remover active de todas las pestañas
+            codeTabs.forEach(t => t.classList.remove('active'));
+            codeContents.forEach(c => c.classList.remove('active'));
+            
+            // Activar la pestaña seleccionada
+            tab.classList.add('active');
+            document.getElementById(target).classList.add('active');
+        });
+    });
 });

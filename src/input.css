@@ -28,20 +28,16 @@
   .nav-link {
     @apply text-gray-300 hover:text-white transition-colors relative;
   }
-  
   .nav-link::after {
     content: '';
     @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent-blue transition-all duration-300;
   }
-  
   .nav-link:hover::after {
     @apply w-full;
   }
-  
   .nav-link-mobile {
     @apply text-gray-300 hover:text-accent-blue hover:bg-gray-800/50 px-4 py-2 rounded transition-colors;
   }
-
   .social-link {
     @apply text-gray-400 hover:text-accent-blue transition-all duration-300 hover:scale-110 hover:-translate-y-1;
   }
@@ -55,15 +51,12 @@
   .timeline-item {
     @apply relative;
   }
-  
   .timeline-content {
     @apply relative;
   }
-  
   .timeline-icon {
     @apply flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg;
   }
-  
   .tag {
     @apply text-xs px-3 py-1 bg-gray-800 text-gray-300 rounded-full border border-gray-700 hover:border-accent-blue transition-colors;
   }
@@ -95,6 +88,48 @@
       @apply w-full;
     }
   }
+
+  /* Code section styles */
+  .profile-badge {
+    @apply flex items-center gap-2 px-6 py-3 rounded-lg text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+  .code-tab {
+    @apply px-6 py-3 text-sm font-mono text-gray-400 hover:text-white hover:bg-gray-800/50 transition-colors border-b-2 border-transparent;
+  }
+  .code-tab.active {
+    @apply text-white bg-gray-800/50 border-accent-blue;
+  }
+  .code-container {
+    @apply relative;
+  }
+  .code-content {
+    @apply hidden;
+  }
+  .code-content.active {
+    @apply block;
+  }
+  .code-header {
+    @apply px-6 py-3 bg-gray-900/30 border-b border-gray-800;
+  }
+  .code-block {
+    @apply p-6 overflow-x-auto font-mono text-sm leading-relaxed;
+  }
+  /* Syntax highlighting manual */
+  .code-block code {
+    @apply text-gray-300;
+  }
+  .code-block .comment {
+    @apply text-gray-500 italic;
+  }
+  .code-block .keyword {
+    @apply text-purple-400;
+  }
+  .code-block .string {
+    @apply text-green-400;
+  }
+  .code-block .number {
+    @apply text-orange-400;
+  } 
 
 }
 
