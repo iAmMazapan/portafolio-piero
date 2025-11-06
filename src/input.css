@@ -42,3 +42,22 @@
     @apply text-gray-300 hover:text-accent-blue hover:bg-gray-800/50 px-4 py-2 rounded transition-colors;
   }
 }
+
+/* Animaciones */
+
+@layer utilities {
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-in-out forwards;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
