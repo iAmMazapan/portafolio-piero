@@ -1,0 +1,26 @@
+/* Directivas de Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados globales */
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-dark-bg text-gray-100 font-sans;
+  }
+}
+
+/* Componentes personalizados */
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
+  }
+  
+  .card {
+    @apply bg-dark-card rounded-lg p-6 hover:shadow-xl transition-all duration-300;
+  }
+}
