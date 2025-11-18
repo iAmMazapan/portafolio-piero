@@ -1,952 +1,417 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Piero Nieto - Estudiante de Ciencias de la Computación especializado en algoritmos y programación competitiva">
-    <meta name="author" content="Piero Nieto">
-    
-    <!-- Título -->
-    <title>Piero Nieto | Competitive Programmer & CS Student</title>
-    
-    <!-- CSS compilado de Tailwind -->
-    <link rel="stylesheet" href="./dist/output.css">
-    
-    <!-- Fuentes de Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Favicon (puedes agregarlo después) -->
-    <!-- <link rel="icon" type="image/png" href="./assets/icons/favicon.png"> -->
-</head>
+    <title>Piero Nieto</title>
+    <link rel="stylesheet" href="styles.css">
 
-<body class="antialiased">
     
-    <!-- ============================================
-         NAVEGACIÓN
-    ============================================= -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-dark-bg/80 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo/Nombre -->
-                <a href="#home" class="text-xl font-bold text-white hover:text-accent-blue transition-colors">
-                    PN<span class="text-accent-blue">.</span>
-                </a>
-                
-                <!-- Links de navegación (desktop) -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link">Inicio</a>
-                    <a href="#experiencia" class="nav-link">Experiencia</a>
-                    <a href="#competitive" class="nav-link">Competitive Programming</a>
-                    <a href="#proyectos" class="nav-link">Proyectos</a>
-                    <a href="#hobbies" class="nav-link">Hobbies</a>
-                    <a href="#memories" class="nav-link">Memories</a>
-                </div>
-                
-                <!-- Botón menú móvil -->
-                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" data-page="home">Piero Nieto</a>
+            
+            <div class="nav-right">
+                <button class="mobile-menu-btn" id="mobile-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#" data-page="home" class="nav-link active">About</a></li>
+                    <li class="nav-separator">+</li>
+                    <li><a href="#" data-page="experience" class="nav-link">Experience</a></li>
+                    <li class="nav-separator">+</li>
+                    <li><a href="#" data-page="projects" class="nav-link">Projects</a></li>
+                    <li class="nav-separator">+</li>
+                    <li><a href="#" data-page="hobbies" class="nav-link">Hobbies</a></li>
+                    <li class="nav-separator">+</li>
+                    <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <span id="theme-icon">☀️</span>
                 </button>
-            </div>
-        </div>
-        
-        <!-- Menú móvil (oculto por defecto) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-t border-gray-800">
-            <div class="px-4 py-4 space-y-3">
-                <a href="#home" class="block nav-link-mobile">Inicio</a>
-                <a href="#experiencia" class="block nav-link-mobile">Experiencia</a>
-                <a href="#competitive" class="block nav-link-mobile">Competitive Programming</a>
-                <a href="#proyectos" class="block nav-link-mobile">Proyectos</a>
-                <a href="#hobbies" class="block nav-link-mobile">Hobbies</a>
-                <a href="#memories" class="block nav-link-mobile">Memories</a>
             </div>
         </div>
     </nav>
 
-    <!-- ============================================
-        SECCIÓN: HOME / HERO
-    ============================================= -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-        <!-- Fondo animado con gradiente -->
-        <div class="absolute inset-0 bg-gradient-to-br from-accent-blue/10 via-dark-bg to-accent-purple/10 animate-gradient"></div>
-        
-        <!-- Partículas de fondo (efecto sutil) -->
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-20 left-20 w-2 h-2 bg-accent-blue rounded-full animate-pulse"></div>
-            <div class="absolute top-40 right-32 w-3 h-3 bg-accent-purple rounded-full animate-pulse delay-100"></div>
-            <div class="absolute bottom-32 left-40 w-2 h-2 bg-accent-blue rounded-full animate-pulse delay-200"></div>
-            <div class="absolute bottom-20 right-20 w-3 h-3 bg-accent-purple rounded-full animate-pulse delay-300"></div>
+    <!-- Home Page -->
+    <main>
+        <div id="home-page" class="page active">
+            <div class="hero-section">
+                <div class="profile-image-container">
+                    <div style="width: 200px; height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3.5rem; font-weight: 300;">
+                        PN
+                    </div>
+                </div>
+                
+                <div class="hero-content">
+                    <h1>I am a computer scientist</h1>
+                    <p>
+                        and more specifically, I work in algorithms and competitive programming. 
+                        I'm interested in a range of problems that fall under this broad umbrella — 
+                        I particularly enjoy problems involving graph theory and dynamic programming.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-content">
+                <h2>About Me</h2>
+                <p>
+                    I am a Computer Science student at Universidad Nacional de San Antonio Abad del Cusco 
+                    (UNSAAC), graduating in 2025. My passion lies in competitive programming, where I thrive 
+                    on solving complex algorithmic challenges and pushing the boundaries of efficient problem-solving.
+                </p>
+
+                <p>
+                    As an active member of the ACM Cusco Study Circle and Omega Up Club, I collaborate with 
+                    talented peers to explore advanced algorithms and data structures. I have had the privilege 
+                    of representing my university at multiple ICPC Latin America Regional Programming Contests 
+                    (2022-2024), competing against the best programmers in the region.
+                </p>
+
+                <h2>Recent Activities</h2>
+                <p>
+                    In 2024, I participated in the Training Camp Argentina in Rosario, an intensive program 
+                    where I trained alongside top competitive programmers from across Latin America. This 
+                    experience significantly enhanced my problem-solving skills and exposed me to cutting-edge 
+                    algorithmic techniques.
+                </p>
+
+                <p>
+                    I was honored to receive first place at <a href="https://www.youtube.com/watch?v=3FlgNu1J8EA" target="_blank">NASA Space Apps Challenge 2024</a> in Cusco with my team's 
+                    project "Farm Guardians". We created an educational game that uses real NASA satellite data 
+                    to help farmers make informed decisions about their crops, bridging the gap between space 
+                    technology and agriculture.
+                </p>
+
+                <h2>Teaching & Mentorship</h2>
+                <p>
+                    Beyond competing, I am passionate about sharing knowledge. I mentor junior students through 
+                    programming workshops, helping them develop strong foundations in algorithms and problem-solving. 
+                    I believe in fostering a collaborative learning environment where students can grow together 
+                    and support each other's journey in competitive programming.
+                </p>
+            </div>
         </div>
-        
-        <!-- Contenido principal -->
-        <div class="section-container text-center z-10 max-w-4xl">
-            <!-- Saludo -->
-            <p class="text-accent-blue font-mono text-lg mb-4 animate-fade-in">
-                Hola, mi nombre es
+
+        <!-- Experience Page -->
+        <div id="experience-page" class="page">
+            <h1 class="section-title">Experience & Education</h1>
+
+            <div class="experience-item">
+                <div class="experience-meta">
+                    <span class="experience-date">2020 - 2025</span>
+                </div>
+                <h3 class="experience-title">B.S. in Computer Science and Systems Engineering</h3>
+                <div class="experience-org">Universidad Nacional de San Antonio Abad del Cusco</div>
+                <p class="experience-description">
+                    Specialized in algorithms, data structures, and competitive programming. 
+                    Active member of ACM Cusco Study Circle and Omega Up Club. Maintained strong 
+                    academic performance while competing in national and international programming contests.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-meta">
+                    <span class="experience-date">2024</span>
+                </div>
+                <h3 class="experience-title">Training Camp Participant</h3>
+                <div class="experience-org">Training Camp Argentina - Rosario</div>
+                <p class="experience-description">
+                    Participated in intensive training focused on advanced algorithms and competitive 
+                    programming techniques. Collaborated with top programmers from across Latin America, 
+                    solving complex problems in data structures, graph theory, and algorithmic optimization.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-meta">
+                    <span class="experience-date">2024</span>
+                </div>
+                <h3 class="experience-title">Hackathon Winner - Farm Guardians</h3>
+                <div class="experience-org">NASA Space Apps Challenge - Cusco</div>
+                <p class="experience-description">
+                    Led development of an educational videogame that transforms NASA satellite data into 
+                    interactive farming missions. The project won first place by demonstrating innovative 
+                    use of real-world data visualization and game mechanics to address agricultural challenges.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-meta">
+                    <span class="experience-date">2022 - 2024</span>
+                </div>
+                <h3 class="experience-title">UNSAAC Representative</h3>
+                <div class="experience-org">ICPC Latin America Regional Programming Contest</div>
+                <p class="experience-description">
+                    Represented my university in multiple editions of the most prestigious programming 
+                    competition in Latin America. Competed against top teams from across the region, 
+                    solving algorithmic problems under time pressure and demonstrating strong teamwork 
+                    and problem-solving skills.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-meta">
+                    <span class="experience-date">2021 - Present</span>
+                </div>
+                <h3 class="experience-title">Programming Mentor</h3>
+                <div class="experience-org">ACM Cusco & Omega Up Club</div>
+                <p class="experience-description">
+                    Mentor junior students in programming fundamentals, algorithms, and competitive 
+                    programming techniques. Design and deliver workshops on data structures, problem-solving 
+                    strategies, and contest preparation. Foster a collaborative learning environment for 
+                    students interested in competitive programming.
+                </p>
+            </div>
+        </div>
+
+        <!-- Projects Page -->
+        <div id="projects-page" class="page">
+            <h1 class="section-title">Projects</h1>
+
+            <h2 class="subsection-title">Featured</h2>
+
+            <div class="project-item">
+                <div class="project-meta">
+                    <span class="project-year">2024,</span>
+                    <a href="https://github.com/iAmMazapan/FarmGuardians" target="_blank" class="project-title-link">"Farm Guardians"</a>
+                    <span class="project-badge">Winner</span>
+                </div>
+                <p class="project-description">
+                    Educational videogame that transforms real NASA data (NDVI, temperature, soil moisture) 
+                    into interactive missions where players face real climate scenarios and make key decisions 
+                    about irrigation, fertilization, and pest control. Winner of NASA Space Apps Challenge 2024 - Cusco. 
+                    Available in VR and conventional devices. <a href="https://www.youtube.com/watch?v=3FlgNu1J8EA" target="_blank">[Demo]</a>
+                </p>
+                <div class="tech-list">
+                    <span class="tech-item">Unity</span>
+                    <span class="tech-item">C#</span>
+                    <span class="tech-item">NASA APIs</span>
+                    <span class="tech-item">VR Development</span>
+                    <span class="tech-item">Game Design</span>
+                </div>
+            </div>
+
+            <h2 class="subsection-title">Academic Projects</h2>
+
+            <div class="project-item">
+                <div class="project-meta">
+                    <span class="project-year">2024,</span>
+                    <span class="project-title-link">"Automated Attendance System with Facial Recognition"</span>
+                </div>
+                <p class="project-description">
+                    Developed an automated attendance tracking system using facial recognition technology 
+                    to streamline student check-in processes in academic environments. The system uses 
+                    computer vision techniques to accurately identify and record attendance in real-time.
+                </p>
+                <div class="tech-list">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">OpenCV</span>
+                    <span class="tech-item">Machine Learning</span>
+                    <span class="tech-item">Face Recognition</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-meta">
+                    <span class="project-year">2024,</span>
+                    <span class="project-title-link">"Performance Comparison: Assembly vs Python"</span>
+                </div>
+                <p class="project-description">
+                    Conducted a comprehensive comparative analysis of performance between low-level Assembly 
+                    language and high-level Python for specific computational tasks. The study explored 
+                    trade-offs between development speed, code readability, and execution performance.
+                </p>
+                <div class="tech-list">
+                    <span class="tech-item">Assembly (x86)</span>
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">Performance Analysis</span>
+                    <span class="tech-item">Benchmarking</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hobbies Page -->
+        <div id="hobbies-page" class="page">
+            <h1 class="section-title">Hobbies & Interests</h1>
+
+            <p style="color: var(--text-secondary); margin-bottom: 3rem; line-height: 1.7;">
+                When I'm not coding or solving algorithmic puzzles, I enjoy a variety of activities 
+                that help me stay creative, balanced, and continuously learning.
             </p>
-            
-            <!-- Nombre con efecto de escritura -->
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">
-                <span id="typing-text" class="text-white"></span>
-                <span id="cursor" class="text-accent-blue">|</span>
-            </h1>
-            
-            <!-- Descripción -->
-            <p class="text-xl md:text-2xl text-gray-400 mb-4 animate-fade-in delay-200">
-                Estudiante de Ciencias de la Computación en la UNSAAC
-            </p>
-            
-            <!-- Especialidades -->
-            <p class="text-base md:text-lg text-gray-500 mb-8 max-w-2xl mx-auto animate-fade-in delay-300">
-                Especializado en <span class="text-accent-blue font-semibold">algoritmos</span>, 
-                <span class="text-accent-blue font-semibold">estructuras de datos</span>, 
-                <span class="text-accent-purple font-semibold">teoría de grafos</span> y 
-                <span class="text-accent-purple font-semibold">machine learning</span>.
-            </p>
-            
-            <!-- Botones de acción -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in delay-400">
-                <a href="./assets/cv/CV_Piero_Nieto.pdf" download 
-                class="group px-8 py-4 bg-accent-blue hover:bg-blue-600 rounded-lg transition-all duration-300 font-semibold hover:scale-105 hover:shadow-xl hover:shadow-accent-blue/50">
-                    <span class="flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
-                        Descargar CV
-                    </span>
-                </a>
-                
-                <a href="#proyectos" 
-                class="px-8 py-4 border-2 border-gray-700 hover:border-accent-blue rounded-lg transition-all duration-300 font-semibold hover:scale-105 hover:bg-accent-blue/10">
-                    Ver Proyectos
-                </a>
-            </div>
-            
-            <!-- Redes sociales -->
-            <div class="flex gap-6 justify-center animate-fade-in delay-500">
-                <a href="https://github.com/iAmMazapan" target="_blank" 
-                class="social-link" aria-label="GitHub">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                
-                <a href="https://www.linkedin.com/in/yishar-piero-nieto-barrientos-2bb954277" target="_blank" 
-                class="social-link" aria-label="LinkedIn">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                </a>
-                
-                <a href="https://codeforces.com/profile/SoldierOfLove" target="_blank" 
-                class="social-link" aria-label="Codeforces">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9-4.5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h3zm9 7.5c.828 0 1.5.672 1.5 1.5v7.5c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5V12c0-.828.672-1.5 1.5-1.5h3z"/>
-                    </svg>
-                </a>
-                
-                <a href="mailto:piero.nieto@example.com" 
-                class="social-link" aria-label="Email">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                </a>
-            </div>
-            
-            <!-- Indicador de scroll -->
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </div>
-        </div>
-    </section>
 
-    <!-- ============================================
-        SECCIÓN: EXPERIENCIA
-    ============================================= -->
-    <section id="experiencia" class="section-container">
-        <h2 class="text-4xl font-bold mb-4 text-center">Mi Trayectoria</h2>
-        <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-            Desde mis inicios en la programación hasta convertirme en un competidor activo, 
-            aquí está mi camino en el mundo de la computación.
-        </p>
-        
-        <!-- Timeline -->
-        <div class="relative max-w-4xl mx-auto">
-            <!-- Línea vertical central -->
-            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-accent-blue via-accent-purple to-transparent hidden md:block"></div>
-            
-            <!-- Eventos de la timeline -->
-            <div class="space-y-12">
-                
-                <!-- Evento 1: Universidad -->
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-content card hover:border-accent-blue border-2 border-transparent">
-                        <div class="flex items-start gap-4">
-                            <div class="timeline-icon bg-accent-blue">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
-                                </svg>
-                            </div>
-                            <div class="flex-1">
-                                <span class="text-sm text-accent-blue font-mono">2021 - Actualidad</span>
-                                <h3 class="text-xl font-bold mt-1 mb-2">Universidad Nacional de San Antonio Abad del Cusco</h3>
-                                <p class="text-gray-400 mb-3">
-                                    Estudiante de Ciencias de la Computación. Enfoque en algoritmos avanzados, 
-                                    estructuras de datos y teoría de grafos.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="tag">Algoritmos</span>
-                                    <span class="tag">Estructuras de Datos</span>
-                                    <span class="tag">Teoría de Grafos</span>
-                                    <span class="tag">Machine Learning</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Evento 2: IEEEXtreme -->
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-content card hover:border-accent-purple border-2 border-transparent">
-                        <div class="flex items-start gap-4">
-                            <div class="timeline-icon bg-accent-purple">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                                </svg>
-                            </div>
-                            <div class="flex-1">
-                                <span class="text-sm text-accent-purple font-mono">2023</span>
-                                <h3 class="text-xl font-bold mt-1 mb-2">Competencia IEEEXtreme</h3>
-                                <p class="text-gray-400 mb-3">
-                                    Participación en la maratón de programación de 24 horas organizada por IEEE. 
-                                    Resolución de problemas algorítmicos complejos en tiempo real.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="tag">Programación Competitiva</span>
-                                    <span class="tag">Trabajo en Equipo</span>
-                                    <span class="tag">Resolución de Problemas</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Evento 3: Proyectos Destacados -->
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-content card hover:border-accent-blue border-2 border-transparent">
-                        <div class="flex items-start gap-4">
-                            <div class="timeline-icon bg-gradient-to-br from-accent-blue to-accent-purple">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                                </svg>
-                            </div>
-                            <div class="flex-1">
-                                <span class="text-sm text-accent-blue font-mono">2022 - 2024</span>
-                                <h3 class="text-xl font-bold mt-1 mb-2">Desarrollo de Proyectos Personales</h3>
-                                <p class="text-gray-400 mb-3">
-                                    Creación de herramientas y visualizadores para algoritmos de grafos, 
-                                    implementación de soluciones a problemas clásicos de CP y desarrollo 
-                                    de proyectos de machine learning.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="tag">C++</span>
-                                    <span class="tag">Python</span>
-                                    <span class="tag">JavaScript</span>
-                                    <span class="tag">Git</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Evento 4: Comunidad y Aprendizaje -->
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-content card hover:border-accent-purple border-2 border-transparent">
-                        <div class="flex items-start gap-4">
-                            <div class="timeline-icon bg-accent-purple">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </div>
-                            <div class="flex-1">
-                                <span class="text-sm text-accent-purple font-mono">Continuo</span>
-                                <h3 class="text-xl font-bold mt-1 mb-2">Aprendizaje Activo</h3>
-                                <p class="text-gray-400 mb-3">
-                                    Práctica constante en plataformas como Codeforces y LeetCode. 
-                                    Lectura de papers sobre algoritmos y técnicas de optimización. 
-                                    Participación en comunidades de programadores.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="tag">Codeforces</span>
-                                    <span class="tag">LeetCode</span>
-                                    <span class="tag">Comunidad</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        <!-- Estadísticas rápidas -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-4xl mx-auto">
-            <div class="text-center">
-                <div class="text-4xl font-bold text-accent-blue mb-2">500+</div>
-                <div class="text-gray-400 text-sm">Problemas Resueltos</div>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl font-bold text-accent-purple mb-2">15+</div>
-                <div class="text-gray-400 text-sm">Proyectos Completados</div>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl font-bold text-accent-blue mb-2">3+</div>
-                <div class="text-gray-400 text-sm">Años Programando</div>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl font-bold text-accent-purple mb-2">10+</div>
-                <div class="text-gray-400 text-sm">Competencias</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-        SECCIÓN: COMPETITIVE PROGRAMMING
-    ============================================= -->
-    <section id="competitive" class="section-container bg-dark-card/50">
-        <h2 class="text-4xl font-bold mb-4 text-center">Competitive Programming</h2>
-        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Teoría y código sobre algoritmos avanzados. Aquí comparto implementaciones 
-            optimizadas de estructuras de datos y técnicas que uso en competencias.
-        </p>
-        
-        <div class="max-w-5xl mx-auto">
-            
-            <!-- Enlaces a perfiles -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <a href="https://codeforces.com/profile/tu_usuario" target="_blank" 
-                class="profile-badge bg-gradient-to-r from-blue-600 to-blue-700">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9-4.5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h3zm9 7.5c.828 0 1.5.672 1.5 1.5v7.5c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5V12c0-.828.672-1.5 1.5-1.5h3z"/>
-                    </svg>
-                    <span>Codeforces</span>
-                </a>
-                
-                <a href="https://leetcode.com/tu_usuario" target="_blank" 
-                class="profile-badge bg-gradient-to-r from-orange-600 to-orange-700">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
-                    </svg>
-                    <span>LeetCode</span>
-                </a>
-                
-                <a href="https://github.com/iAmMazapan" target="_blank" 
-                class="profile-badge bg-gradient-to-r from-gray-700 to-gray-800">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    <span>GitHub</span>
-                </a>
-            </div>
-            
-            <!-- Pestañas de código -->
-            <div class="card border border-gray-800">
-                <!-- Navegación de pestañas -->
-                <div class="flex flex-wrap border-b border-gray-800 bg-gray-900/50">
-                    <button class="code-tab active" data-target="bfs">
-                        <span class="text-green-400">●</span> BFS.cpp
-                    </button>
-                    <button class="code-tab" data-target="dijkstra">
-                        <span class="text-green-400">●</span> Dijkstra.cpp
-                    </button>
-                    <button class="code-tab" data-target="dsu">
-                        <span class="text-green-400">●</span> DSU.cpp
-                    </button>
-                </div>
-                
-                <!-- Contenido de pestañas -->
-                <div class="code-container">
-                    
-                    <!-- BFS -->
-                    <div id="bfs" class="code-content active">
-                        <div class="code-header">
-                            <span class="text-gray-500 text-sm font-mono">Breadth-First Search (BFS)</span>
-                        </div>
-                        <pre class="code-block"><code class="language-cpp">// BFS para encontrar el camino más corto en grafos no ponderados
-    #include &lt;bits/stdc++.h&gt;
-    using namespace std;
-
-    vector&lt;int&gt; bfs(vector&lt;vector&lt;int&gt;&gt;&amp; graph, int start, int end) {
-        int n = graph.size();
-        vector&lt;int&gt; dist(n, -1);
-        vector&lt;int&gt; parent(n, -1);
-        queue&lt;int&gt; q;
-        
-        dist[start] = 0;
-        q.push(start);
-        
-        while (!q.empty()) {
-            int u = q.front();
-            q.pop();
-            
-            if (u == end) break;
-            
-            for (int v : graph[u]) {
-                if (dist[v] == -1) {
-                    dist[v] = dist[u] + 1;
-                    parent[v] = u;
-                    q.push(v);
-                }
-            }
-        }
-        
-        // Reconstruir camino
-        vector&lt;int&gt; path;
-        if (dist[end] == -1) return path; // No existe camino
-        
-        for (int v = end; v != -1; v = parent[v]) {
-            path.push_back(v);
-        }
-        reverse(path.begin(), path.end());
-        
-        return path;
-    }
-
-    // Complejidad: O(V + E)
-    // Uso: grafos no ponderados, nivel más corto</code></pre>
-                    </div>
-                    
-                    <!-- Dijkstra -->
-                    <div id="dijkstra" class="code-content">
-                        <div class="code-header">
-                            <span class="text-gray-500 text-sm font-mono">Algoritmo de Dijkstra</span>
-                        </div>
-                        <pre class="code-block"><code class="language-cpp">// Dijkstra para caminos más cortos con pesos positivos
-    #include &lt;bits/stdc++.h&gt;
-    using namespace std;
-
-    typedef pair&lt;long long, int&gt; pli;
-
-    vector&lt;long long&gt; dijkstra(vector&lt;vector&lt;pli&gt;&gt;&amp; graph, int start) {
-        int n = graph.size();
-        vector&lt;long long&gt; dist(n, LLONG_MAX);
-        priority_queue&lt;pli, vector&lt;pli&gt;, greater&lt;pli&gt;&gt; pq;
-        
-        dist[start] = 0;
-        pq.push({0, start});
-        
-        while (!pq.empty()) {
-            auto [d, u] = pq.top();
-            pq.pop();
-            
-            if (d &gt; dist[u]) continue;
-            
-            for (auto [v, weight] : graph[u]) {
-                if (dist[u] + weight &lt; dist[v]) {
-                    dist[v] = dist[u] + weight;
-                    pq.push({dist[v], v});
-                }
-            }
-        }
-        
-        return dist;
-    }
-
-    // Complejidad: O((V + E) log V)
-    // Uso: grafos con pesos positivos, camino mínimo</code></pre>
-                    </div>
-                    
-                    <!-- DSU -->
-                    <div id="dsu" class="code-content">
-                        <div class="code-header">
-                            <span class="text-gray-500 text-sm font-mono">Disjoint Set Union (Union-Find)</span>
-                        </div>
-                        <pre class="code-block"><code class="language-cpp">// DSU con compresión de caminos y union por rango
-    #include &lt;bits/stdc++.h&gt;
-    using namespace std;
-
-    class DSU {
-    private:
-        vector&lt;int&gt; parent, rank;
-        
-    public:
-        DSU(int n) : parent(n), rank(n, 0) {
-            iota(parent.begin(), parent.end(), 0);
-        }
-        
-        int find(int x) {
-            if (parent[x] != x) {
-                parent[x] = find(parent[x]); // Compresión de caminos
-            }
-            return parent[x];
-        }
-        
-        bool unite(int x, int y) {
-            int px = find(x), py = find(y);
-            if (px == py) return false;
-            
-            // Union por rango
-            if (rank[px] &lt; rank[py]) swap(px, py);
-            parent[py] = px;
-            if (rank[px] == rank[py]) rank[px]++;
-            
-            return true;
-        }
-        
-        bool connected(int x, int y) {
-            return find(x) == find(y);
-        }
-    };
-
-    // Complejidad: O(α(n)) ≈ O(1) amortizado
-    // Uso: componentes conexos, ciclos, MST</code></pre>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <!-- Descripción de técnicas -->
-            <div class="grid md:grid-cols-3 gap-6 mt-12">
-                <div class="card text-center">
-                    <div class="text-4xl mb-4">🔍</div>
-                    <h3 class="text-lg font-bold mb-2">Búsqueda en Grafos</h3>
-                    <p class="text-gray-400 text-sm">
-                        DFS, BFS, Dijkstra, Bellman-Ford, Floyd-Warshall
+            <div class="hobbies-grid">
+                <div class="hobby-item">
+                    <h3>Reading</h3>
+                    <p>
+                        I enjoy reading technical papers on algorithms, books about computer science, 
+                        and science fiction novels. Reading helps me discover new perspectives and 
+                        deepen my understanding of complex topics.
                     </p>
                 </div>
-                
-                <div class="card text-center">
-                    <div class="text-4xl mb-4">🌳</div>
-                    <h3 class="text-lg font-bold mb-2">Estructuras de Datos</h3>
-                    <p class="text-gray-400 text-sm">
-                        Segment Tree, Fenwick Tree, DSU, Trie, Sparse Table
-                    </p>
-                </div>
-                
-                <div class="card text-center">
-                    <div class="text-4xl mb-4">⚡</div>
-                    <h3 class="text-lg font-bold mb-2">Programación Dinámica</h3>
-                    <p class="text-gray-400 text-sm">
-                        Knapsack, LIS, LCS, DP en árboles, Bitmask DP
-                    </p>
-                </div>
-            </div>
-            
-        </div>
-    </section>
 
-    <!-- ============================================
-        SECCIÓN: PROYECTOS
-    ============================================= -->
-    <section id="proyectos" class="section-container">
-        <h2 class="text-4xl font-bold mb-4 text-center">Proyectos Destacados</h2>
-        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Soluciones innovadoras que combinan tecnología y propósito social. 
-            Cada proyecto representa un desafío superado y un aprendizaje único.
-        </p>
-        
-        <div class="max-w-6xl mx-auto">
-            
-            <!-- Proyecto destacado: Farm Guardians -->
-            <div class="featured-project card border-2 border-transparent hover:border-accent-blue transition-all duration-500 mb-12">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    
-                    <!-- Imagen/Video del proyecto -->
-                    <div class="relative group overflow-hidden rounded-lg">
-                        <div class="aspect-video bg-gradient-to-br from-green-900/30 to-blue-900/30 flex items-center justify-center relative overflow-hidden">
-                            <!-- Badge de destacado -->
-                            <div class="absolute top-4 left-4 z-10">
-                                <span class="px-3 py-1 bg-yellow-500 text-black text-xs font-bold rounded-full flex items-center gap-1">
-                                    🏆 Hackathon Winner
-                                </span>
-                            </div>
-                            
-                            <!-- Placeholder para imagen/preview -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-green-500/20 to-blue-500/20"></div>
-                            <div class="relative z-10 text-center">
-                                <div class="text-6xl mb-4">🌾</div>
-                                <p class="text-sm text-gray-400 font-mono">Farm Guardians</p>
-                            </div>
-                            
-                            <!-- Hover overlay -->
-                            <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <a href="https://www.youtube.com/watch?v=3FlgNu1J8EA" target="_blank"
-                                class="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg flex items-center gap-2 transition-colors">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                                    </svg>
-                                    Ver Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Información del proyecto -->
-                    <div>
-                        <h3 class="text-3xl font-bold mb-3 flex items-center gap-3">
-                            Farm Guardians
-                            <span class="text-green-400 text-2xl">🌱</span>
-                        </h3>
-                        
-                        <p class="text-accent-blue font-semibold mb-4 text-sm">
-                            NASA Space Apps Challenge 2024 - Cusco 🏆
-                        </p>
-                        
-                        <p class="text-gray-300 mb-4 leading-relaxed">
-                            Videojuego educativo que transforma datos reales de la NASA (NDVI, temperatura, 
-                            humedad del suelo) en misiones interactivas donde los jugadores enfrentan escenarios 
-                            climáticos reales y toman decisiones clave sobre riego, fertilización y control de plagas.
-                        </p>
-                        
-                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
-                            Un puente entre la ciencia satelital y más de 300 millones de pequeños agricultores 
-                            que carecen de acceso a servicios climáticos digitales. Disponible en VR y dispositivos 
-                            convencionales para una experiencia inclusiva.
-                        </p>
-                        
-                        <!-- Tecnologías usadas -->
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="tech-tag">Unity</span>
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">NASA APIs</span>
-                            <span class="tech-tag">VR</span>
-                            <span class="tech-tag">Game Development</span>
-                            <span class="tech-tag">Data Visualization</span>
-                        </div>
-                        
-                        <!-- Enlaces del proyecto -->
-                        <div class="flex flex-wrap gap-3">
-                            <a href="https://github.com/iAmMazapan/FarmGuardians" target="_blank"
-                            class="project-link bg-gray-800 hover:bg-gray-700">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                Código
-                            </a>
-                            
-                            <a href="https://www.youtube.com/watch?v=3FlgNu1J8EA" target="_blank"
-                            class="project-link bg-red-600 hover:bg-red-700">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                                </svg>
-                                Demo
-                            </a>
-                        </div>
-                    </div>
-                    
+                <div class="hobby-item">
+                    <h3>Music & Guitar</h3>
+                    <p>
+                        Playing guitar is my way of unwinding and expressing creativity. I particularly 
+                        enjoy Andean music, which connects me to my cultural roots and provides a 
+                        refreshing break from problem-solving.
+                    </p>
                 </div>
-            </div>
-            
-            <!-- Sección de próximos proyectos -->
-            <div class="text-center py-12">
-                <p class="text-gray-500 text-lg mb-4">Más proyectos próximamente...</p>
-                <div class="flex justify-center gap-4 opacity-50">
-                    <div class="w-48 h-32 bg-gray-800 rounded-lg animate-pulse"></div>
-                    <div class="w-48 h-32 bg-gray-800 rounded-lg animate-pulse hidden sm:block"></div>
-                    <div class="w-48 h-32 bg-gray-800 rounded-lg animate-pulse hidden md:block"></div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
 
-    <!-- ============================================
-        SECCIÓN: HOBBIES
-    ============================================= -->
-    <section id="hobbies" class="section-container bg-dark-card/50">
-        <h2 class="text-4xl font-bold mb-4 text-center">Hobbies & Intereses</h2>
-        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Más allá del código, estos son los pasatiempos que me mantienen creativo, 
-            equilibrado y siempre aprendiendo algo nuevo.
-        </p>
-        
-        <div class="max-w-5xl mx-auto">
-            <!-- Grid de hobbies -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Hobby 1: Lectura -->
-                <div class="hobby-card group">
-                    <div class="hobby-icon bg-gradient-to-br from-blue-500 to-blue-700">
-                        📚
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Lectura</h3>
-                    <p class="text-gray-400 text-sm">
-                        Papers de algoritmos, libros técnicos y literatura sobre ciencia. 
-                        Siempre buscando nuevas perspectivas y conocimiento.
+                <div class="hobby-item">
+                    <h3>Films & Cinema</h3>
+                    <p>
+                        I'm a film enthusiast who appreciates good storytelling and cinematography. 
+                        Movies offer a different kind of problem-solving — understanding narratives, 
+                        character development, and visual composition.
                     </p>
                 </div>
-                
-                <!-- Hobby 2: Guitarra -->
-                <div class="hobby-card group">
-                    <div class="hobby-icon bg-gradient-to-br from-purple-500 to-pink-600">
-                        🎸
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Música Andina</h3>
-                    <p class="text-gray-400 text-sm">
-                        Toco guitarra y disfruto de la música andina. La música es mi forma 
-                        de relajarme y conectar con mis raíces culturales.
+
+                <div class="hobby-item">
+                    <h3>Video Games</h3>
+                    <p>
+                        From strategy games to puzzle-based challenges, video games fascinate me both 
+                        as entertainment and as studies in game design, mechanics, and system architecture.
                     </p>
                 </div>
-                
-                <!-- Hobby 3: Creación de contenido -->
-                <div class="hobby-card group">
-                    <div class="hobby-icon bg-gradient-to-br from-red-500 to-orange-600">
-                        🎥
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Creación de Contenido</h3>
-                    <p class="text-gray-400 text-sm">
-                        Subo videos y planeo crear más contenido educativo sobre programación 
-                        competitiva y algoritmos.
+
+                <div class="hobby-item">
+                    <h3>Content Creation</h3>
+                    <p>
+                        I create and upload videos, with plans to develop more educational content about 
+                        competitive programming and algorithms to help others in their learning journey.
                     </p>
                 </div>
-                
-                <!-- Hobby 4: Puzzles -->
-                <div class="hobby-card group">
-                    <div class="hobby-icon bg-gradient-to-br from-green-500 to-emerald-600">
-                        🧩
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Cubo de Rubik</h3>
-                    <p class="text-gray-400 text-sm">
-                        Resolver puzzles y cubos de Rubik. Me fascina encontrar patrones 
-                        y optimizar soluciones, igual que en algoritmos.
+
+                <div class="hobby-item">
+                    <h3>Puzzle Solving</h3>
+                    <p>
+                        Solving Rubik's cubes and other mechanical puzzles is a hobby that complements 
+                        my interest in algorithms — finding patterns and optimizing solutions.
                     </p>
-                </div>
-                
-                <!-- Hobby 5: Cocina -->
-                <div class="hobby-card group">
-                    <div class="hobby-icon bg-gradient-to-br from-yellow-500 to-orange-500">
-                        👨‍🍳
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Cocina</h3>
-                    <p class="text-gray-400 text-sm">
-                        Experimentar con recetas es como programar: seguir instrucciones, 
-                        pero con espacio para la creatividad e improvisación.
-                    </p>
-                </div>
-                
-                <!-- Hobby 6: Videojuegos -->
-                <div class="hobby-card group">
-                    <div class="hobby-icon bg-gradient-to-br from-indigo-500 to-purple-600">
-                        🎮
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Videojuegos</h3>
-                    <p class="text-gray-400 text-sm">
-                        Desde estrategia hasta puzzles. Los videojuegos me enseñan sobre 
-                        diseño de sistemas y mecánicas complejas.
-                    </p>
-                </div>
-                
-            </div>
-            
-            <!-- Quote/Filosofía personal -->
-            <div class="mt-16 text-center max-w-3xl mx-auto">
-                <div class="card bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 border border-accent-blue/30">
-                    <p class="text-xl italic text-gray-300 mb-4">
-                        "El balance entre código y creatividad es lo que me mantiene motivado. 
-                        Cada hobby me enseña algo que aplico en programación."
-                    </p>
-                    <p class="text-accent-blue font-semibold">— Piero Nieto</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- ============================================
-        SECCIÓN: MEMORIES
-    ============================================= -->
-    <section id="memories" class="section-container">
-        <h2 class="text-4xl font-bold mb-4 text-center">Memories</h2>
-        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Los momentos que definen mi camino: competencias, victorias, aprendizajes 
-            y las personas increíbles que conocí en el proceso.
-        </p>
-        
-        <div class="max-w-6xl mx-auto">
-            
-            <!-- Grid de memories -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Memory 1: ICPC -->
-                <div class="memory-card group">
-                    <div class="memory-image">
-                        <div class="aspect-square bg-gradient-to-br from-blue-900/40 to-purple-900/40 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
-                            <div class="relative z-10 text-center">
-                                <div class="text-6xl mb-2">🏆</div>
-                                <p class="text-xs text-gray-400 font-mono">ICPC</p>
-                            </div>
-                            <!-- Overlay con info -->
-                            <div class="memory-overlay">
-                                <p class="text-sm font-semibold">Ver más</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1">ICPC con el equipo</h3>
-                        <p class="text-gray-400 text-sm mb-2">
-                            Una de las experiencias más intensas: resolver problemas junto a mis 
-                            compañeros bajo presión y aprender de los mejores.
-                        </p>
-                        <span class="text-xs text-accent-blue font-mono">📅 2023-2024</span>
-                    </div>
-                </div>
-                
-                <!-- Memory 2: Primera victoria CuscoContest -->
-                <div class="memory-card group">
-                    <div class="memory-image">
-                        <div class="aspect-square bg-gradient-to-br from-yellow-900/40 to-orange-900/40 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-orange-500/20"></div>
-                            <div class="relative z-10 text-center">
-                                <div class="text-6xl mb-2">🥇</div>
-                                <p class="text-xs text-gray-400 font-mono">CuscoContest</p>
-                            </div>
-                            <div class="memory-overlay">
-                                <p class="text-sm font-semibold">Ver más</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1">Primera victoria: CuscoContest</h3>
-                        <p class="text-gray-400 text-sm mb-2">
-                            Nuestro primer lugar en una competencia local. El momento que nos 
-                            demostró que el esfuerzo y la práctica sí dan frutos.
-                        </p>
-                        <span class="text-xs text-accent-purple font-mono">📅 2023</span>
-                    </div>
-                </div>
-                
-                <!-- Memory 3: NASA Space Apps -->
-                <div class="memory-card group">
-                    <div class="memory-image">
-                        <div class="aspect-square bg-gradient-to-br from-green-900/40 to-blue-900/40 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-green-500/20 to-blue-500/20"></div>
-                            <div class="relative z-10 text-center">
-                                <div class="text-6xl mb-2">🚀</div>
-                                <p class="text-xs text-gray-400 font-mono">NASA Hackathon</p>
-                            </div>
-                            <div class="memory-overlay">
-                                <p class="text-sm font-semibold">Ver más</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1">NASA Space Apps - Cusco</h3>
-                        <p class="text-gray-400 text-sm mb-2">
-                            Ganadores con Farm Guardians. 48 horas creando soluciones con 
-                            datos de la NASA para ayudar a agricultores.
-                        </p>
-                        <span class="text-xs text-accent-blue font-mono">📅 2024</span>
-                    </div>
-                </div>
-                
-                <!-- Memory 4: Campamentos de programación -->
-                <div class="memory-card group">
-                    <div class="memory-image">
-                        <div class="aspect-square bg-gradient-to-br from-purple-900/40 to-pink-900/40 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20"></div>
-                            <div class="relative z-10 text-center">
-                                <div class="text-6xl mb-2">⛺</div>
-                                <p class="text-xs text-gray-400 font-mono">Campamentos</p>
-                            </div>
-                            <div class="memory-overlay">
-                                <p class="text-sm font-semibold">Ver más</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1">Campamentos de Entrenamiento</h3>
-                        <p class="text-gray-400 text-sm mb-2">
-                            Días completos resolviendo problemas, compartiendo estrategias 
-                            y forjando amistades con otros competidores.
-                        </p>
-                        <span class="text-xs text-accent-purple font-mono">📅 Varios años</span>
-                    </div>
-                </div>
-                
-                <!-- Memory 5: IEEEXtreme -->
-                <div class="memory-card group">
-                    <div class="memory-image">
-                        <div class="aspect-square bg-gradient-to-br from-red-900/40 to-orange-900/40 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-red-500/20 to-orange-500/20"></div>
-                            <div class="relative z-10 text-center">
-                                <div class="text-6xl mb-2">⚡</div>
-                                <p class="text-xs text-gray-400 font-mono">IEEEXtreme</p>
-                            </div>
-                            <div class="memory-overlay">
-                                <p class="text-sm font-semibold">Ver más</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1">Maratón IEEEXtreme 24h</h3>
-                        <p class="text-gray-400 text-sm mb-2">
-                            24 horas sin dormir, café infinito y código intenso. 
-                            Una experiencia que prueba tu resistencia mental.
-                        </p>
-                        <span class="text-xs text-accent-blue font-mono">📅 2023</span>
-                    </div>
-                </div>
-                
-                <!-- Memory 6: Primeros pasos -->
-                <div class="memory-card group">
-                    <div class="memory-image">
-                        <div class="aspect-square bg-gradient-to-br from-indigo-900/40 to-blue-900/40 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-blue-500/20"></div>
-                            <div class="relative z-10 text-center">
-                                <div class="text-6xl mb-2">💻</div>
-                                <p class="text-xs text-gray-400 font-mono">Inicio</p>
-                            </div>
-                            <div class="memory-overlay">
-                                <p class="text-sm font-semibold">Ver más</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1">Primeros pasos en CP</h3>
-                        <p class="text-gray-400 text-sm mb-2">
-                            Cuando descubrí la programación competitiva y me enamoré de 
-                            resolver problemas algorítmicos complejos.
-                        </p>
-                        <span class="text-xs text-accent-purple font-mono">📅 2021</span>
-                    </div>
-                </div>
-                
+        <!-- Contact Page -->
+        <div id="contact-page" class="page">
+            <h1 class="section-title">Contact</h1>
+
+            <div class="text-content">
+                <p>
+                    I'm always interested in connecting with fellow programmers, researchers, 
+                    and anyone passionate about algorithms and competitive programming. Feel free 
+                    to reach out if you'd like to collaborate, discuss problem-solving techniques, 
+                    or just chat about computer science.
+                </p>
+
+                <h2>Get in Touch</h2>
+                <p>
+                    <strong>Email:</strong> piero.nieto@unsaac.edu.pe
+                </p>
+
+                <h2>Find Me Online</h2>
+                <p>
+                    <strong>GitHub:</strong> <a href="https://github.com/iAmMazapan" target="_blank">github.com/iAmMazapan</a><br>
+                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yishar-piero-nieto-barrientos-2bb954277" target="_blank">Yishar Piero Nieto Barrientos</a><br>
+                    <strong>Codeforces:</strong> <a href="https://codeforces.com/profile/SoldierOfLove" target="_blank">SoldierOfLove</a>
+                </p>
+
+                <h2>Location</h2>
+                <p>
+                    Cusco, Peru
+                </p>
             </div>
-            
-            <!-- Call to action -->
-            <div class="text-center mt-12">
-                <p class="text-gray-400 mb-4">¿Quieres ser parte de la próxima memoria?</p>
-                <a href="#proyectos" class="inline-block px-6 py-3 bg-accent-blue hover:bg-blue-600 rounded-lg transition-colors font-semibold">
-                    Trabajemos juntos
-                </a>
-            </div>
-            
         </div>
-    </section>
-    <!-- ============================================
-         FOOTER
-    ============================================= -->
-    <footer class="bg-dark-card border-t border-gray-800 py-8">
-        <div class="section-container text-center">
-            <p class="text-gray-400">
-                © 2024 Piero Nieto. Hecho con 💙 y Tailwind CSS
-            </p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About This Site</h3>
+                <p>
+                    This portfolio showcases my journey in computer science and competitive programming. 
+                    Built with vanilla HTML, CSS, and JavaScript — sometimes the simplest solutions are the best.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="https://github.com/iAmMazapan" target="_blank">GitHub Profile</a>
+                    <a href="https://codeforces.com/profile/SoldierOfLove" target="_blank">Codeforces Profile</a>
+                    <a href="https://www.linkedin.com/in/yishar-piero-nieto-barrientos-2bb954277" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/iAmMazapan/FarmGuardians" target="_blank">Farm Guardians Project</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 Piero Nieto. Last updated November 2024.</p>
         </div>
     </footer>
 
-    <!-- Botón flotante para volver arriba -->
-    <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-accent-blue hover:bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-        </svg>
-    </button>
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
 
-    <!-- JavaScript -->
-    <script src="./src/scripts.js"></script>
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        themeIcon.textContent = currentTheme === 'dark' ? '🌙' : '☀️';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+        });
+
+        // Page Navigation
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const logo = document.querySelector('.logo');
+
+        function showPage(pageName) {
+            pages.forEach(page => page.classList.remove('active'));
+            
+            const selectedPage = document.getElementById(`${pageName}-page`);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageName) {
+                    link.classList.add('active');
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById('nav-links').classList.remove('active');
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageName = link.getAttribute('data-page');
+                showPage(pageName);
+            });
+        });
+
+        logo.addEventListener('click', (e) => {
+            e.preventDefault();
+            showPage('home');
+        });
+
+        document.getElementById('mobile-toggle').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
-</html>
