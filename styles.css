@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 19px; /* probablemente está así por defecto */
+}
+
+
 :root {
     --bg: #ffffff;
     --text: #1a1a1a;
@@ -115,7 +120,7 @@ main {
 /* Home Page */
 .hero-section {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 240px 1fr;  /* se ajusta al tamaño deseado */
     gap: 3rem;
     margin-bottom: 3rem;
     align-items: start;
@@ -126,11 +131,15 @@ main {
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
+    width: 14rem;  /* = 224px (tu requerimiento principal) */
+    max-width: 245px; /* límite permitido */
+    height: 14rem;
+    max-height: 245px;
     border-radius: 4px;
     object-fit: cover;
 }
+
+
 
 .hero-content h1 {
     font-size: 1.8rem;
@@ -424,9 +433,13 @@ footer {
     }
 
     .hero-section {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: grid;
+        grid-template-columns: 260px 1fr; /* más espacio para la imagen */
+        gap: 2.5rem; /* separación más cómoda */
+        margin-bottom: 3rem;
+        align-items: start;
     }
+
 
     .profile-image {
         width: 150px;
